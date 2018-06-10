@@ -138,9 +138,12 @@ function startTimer() {
   }, 1000);
 }
 
+// Reset Timer
+restart.onclick = resetTimer;
+
 function resetTimer() {
-  secs = 1;
-  mins = 0;
+  clearInterval(timeTracker);
+  sec = 0;
   startTimer()
 }
 
