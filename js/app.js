@@ -13,6 +13,10 @@ let openedCards = [];
 let timeTracker;
 let t = document.querySelector('.timer');
 
+let matchedCard = document.getElementsByClassName('match');
+let starList = document.querySelectorAll('.stars li');
+let closeicon = document.querySelector('.close');
+let modal = document.getElementById('popup1');
 
 /***Create a list that holds all of your cards***/
 const cardClasses = [
@@ -96,7 +100,7 @@ totalCards.forEach(function(c) {
           openedCards = [];
         } else {
           // No-match: hide cards after 1sec
-          timeOut(c, 1000);
+          timeOut(c, 500);
         }
         counter++;
         moveCounter();
@@ -172,17 +176,21 @@ function resetStars() {
   // $(".num-stars").text(String(numStars));
 }
 
-let resetGame = function() {
-  openedCards = [];
-  counter = 0;
-  moveCounter();
-  resetStars();
-  resetTimer();
-  clearInterval(timeTracker);
-  startGame();
-};
+// let resetGame = function() {
+//   openedCards = [];
+//   counter = 0;
+//   moveCounter();
+//   resetStars();
+//   resetTimer();
+//   clearInterval(timeTracker);
+//   startGame();
+// };
+//
+// restart.addEventListener('click', resetGame);
 
-restart.addEventListener('click', resetGame);
+restart.addEventListener('click', function(){
+  location.reload();
+});
 
 /*
  * set up the event listener for a card. If a card is clicked:
