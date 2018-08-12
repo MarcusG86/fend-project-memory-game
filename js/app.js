@@ -156,7 +156,6 @@ function resetTimer() {
 // Update move counter
 function moveCounter() {
   moves.textContent = counter;
-
   if (counter === hard || counter === medium) {
     removeStar();
   }
@@ -178,15 +177,16 @@ function resetStars() {
   // $(".num-stars").text(String(numStars));
 }
 
+
 // Winning Modal - Displays stats
 function congrats() {
   if (matches == 8) {
     clearInterval(timeTracker);
-    finalTime = t.innerHTML;
+    // finalTime = t.innerHTML;
 
     modal.classList.add("show");
     let starRating = document.querySelector(".stars").innerHTML;
-    document.getElementById("lastMove").innerHTML = moves;
+    document.getElementById("lastMove").innerHTML = counter;
     document.getElementById("finalTime").innerHTML = finalTime;
     document.getElementById("starRating").innerHTML = starRating;
 
