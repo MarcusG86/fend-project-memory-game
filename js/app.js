@@ -129,20 +129,23 @@ function shuffle(array) {
 }
 
 /***Timer***/
-let secs = document.getElementById("seconds");
-let mins = document.getElementById("minutes");
-let sec = 0;
-
-function timer(t) {
-  return t > 9 ? t : "0" + t;
-}
-
+let sec = 0, min = 0; hour = 0;
 function startTimer() {
-  timeTracker = setInterval(function() {
-    secs.innerHTML = timer(++sec % 60);
-    mins.innerHTML = timer(parseInt(sec / 60, 10));
-  }, 1000);
+    timeTracker = setInterval(function() {
+
+        t.innerHTML = min + " mins " + sec + " secs";
+        sec++;
+        if (sec == 60) {
+            min++;
+            sec=0;
+        }
+        if (min == 60) {
+            hour++;
+            min = 0;
+        }
+    },1000);
 }
+
 
 // Reset Timer
 restart.onclick = resetTimer;
@@ -182,7 +185,7 @@ function resetStars() {
 function congrats() {
   if (matches == 8) {
     clearInterval(timeTracker);
-    // finalTime = t.innerHTML;
+    finalTime = t.innerHTML;
 
     modal.classList.add("show");
     let starRating = document.querySelector(".stars").innerHTML;
@@ -209,17 +212,6 @@ function playAgain() {
 }
 
 deck.addEventListener("click", congrats);
-// let resetGame = function() {
-//   openedCards = [];
-//   counter = 0;
-//   moveCounter();
-//   resetStars();
-//   resetTimer();
-//   clearInterval(timeTracker);
-//   startGame();
-// };
-//
-// restart.addEventListener('click', resetGame);
 
 function myF() {
   modal.classList.add("show");

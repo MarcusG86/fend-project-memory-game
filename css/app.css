@@ -112,6 +112,10 @@ h1 {
   margin-left: 50px;
 }
 
+.timer {
+  display: inline-block;
+  padding-left: 20px;
+}
 
 /*** Modal CSS ***/
 .overlay {
