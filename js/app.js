@@ -1,5 +1,4 @@
 /***Variables***/
-const wonMsg = 'You Win! Play again?';
 let restart = document.querySelector('.restart');
 let deck = document.querySelector('.deck');
 let moves = document.querySelector('.moves');
@@ -10,13 +9,14 @@ let totalMoves = moves.innerText;
 let stars = document.getElementsByClassName('fa-star');
 let numStars = 3;
 let openedCards = [];
+let matches = 0;
 let timeTracker;
 let t = document.querySelector('.timer');
-
-let matchedCard = document.getElementsByClassName('match');
+let modal = document.getElementById('modal');
 let starList = document.querySelectorAll('.stars li');
+// let cardMatched = document.getElementsByClassName('match');
 let closeicon = document.querySelector('.close');
-let modal = document.getElementById('popup1');
+
 
 /***Create a list that holds all of your cards***/
 const cardClasses = [
@@ -98,6 +98,8 @@ totalCards.forEach(function(c) {
           openedCards[1].classList.add('match');
           hideCard(c);
           openedCards = [];
+          matches += 1;
+          congrats();
         } else {
           // No-match: hide cards after 1sec
           timeOut(c, 500);
@@ -176,6 +178,37 @@ function resetStars() {
   // $(".num-stars").text(String(numStars));
 }
 
+// Winning Modal - Displays stats
+function congrats() {
+  if (matches == 8) {
+    clearInterval(timeTracker);
+    finalTime = t.innerHTML;
+
+    modal.classList.add("show");
+    let starRating = document.querySelector(".stars").innerHTML;
+    document.getElementById("lastMove").innerHTML = moves;
+    document.getElementById("finalTime").innerHTML = finalTime;
+    document.getElementById("starRating").innerHTML = starRating;
+
+    closeModal();
+  }
+}
+
+// Hitting x on Modal (closes modal)
+function closeModal() {
+    closeicon.addEventListener("click", function(e){
+        modal.classList.remove("show");
+        // startGame();
+    });
+}
+
+// Play Again? function
+function playAgain() {
+    modal.classList.remove("show");
+    location.reload();
+}
+
+deck.addEventListener("click", congrats);
 // let resetGame = function() {
 //   openedCards = [];
 //   counter = 0;
@@ -188,9 +221,15 @@ function resetStars() {
 //
 // restart.addEventListener('click', resetGame);
 
-restart.addEventListener('click', function(){
+function myF() {
+  modal.classList.add("show");
+}
+
+restart.addEventListener('click', function() {
   location.reload();
 });
+
+
 
 /*
  * set up the event listener for a card. If a card is clicked:

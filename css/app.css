@@ -111,3 +111,70 @@ h1 {
 #minutes {
   margin-left: 50px;
 }
+
+
+/*** Modal CSS ***/
+.overlay {
+	top: 0;
+	right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+	background: rgba(0, 0, 0, 0.8);
+	visibility: hidden;
+	opacity: 0;
+}
+
+.popup {
+	margin: 30px auto;
+	padding: 15px;
+	background: #28f;
+  font-family: cursive;
+	width: 85%;
+	position: relative;
+	border-radius: 5px;
+}
+
+.popup h1 {
+	color: #222;
+	font-family: Trebuchet;
+  margin-bottom: 15px;
+}
+
+.popup .close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+  color: #222;
+	text-decoration: none;
+}
+
+.popup .content,
+.content2 {
+	text-align: center;
+}
+
+#play-again {
+  color: #fff;
+	background-color: #124578;
+	padding: 15px 10px;
+	width: 350px;
+  font-size: 18px;
+	font-family: cursive;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+#play-again:hover {
+  background-color: #222;
+}
+
+.show {
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+#starRating li {
+	display: inline-block;
+}
