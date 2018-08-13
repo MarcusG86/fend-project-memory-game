@@ -14,7 +14,6 @@ let timeTracker;
 let t = document.querySelector('.timer');
 let modal = document.getElementById('modal');
 let starList = document.querySelectorAll('.stars li');
-// let cardMatched = document.getElementsByClassName('match');
 let closeicon = document.querySelector('.close');
 
 
@@ -170,14 +169,12 @@ function removeStar() {
   lastStar.parentNode.removeChild(lastStar);
   lastStar.attr('class', 'fa fa-star-o');
   numStars--;
-  // $(".num-stars").text(String(numStars));
 }
 
 function resetStars() {
   let starsReset = document.querySelector('.fa-star-o');
   starsReset.attr('class', 'fa fa-star');
   numStars = 3;
-  // $(".num-stars").text(String(numStars));
 }
 
 
@@ -213,6 +210,7 @@ function playAgain() {
 
 deck.addEventListener("click", congrats);
 
+// Test modal function
 function myF() {
   modal.classList.add("show");
 }

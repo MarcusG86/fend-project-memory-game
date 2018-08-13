@@ -1,20 +1,19 @@
 # Memory Game Project
+JavaScript Concentration game where you need to find all matching duplicate cards to win
+the game!
 
-## Table of Contents
+## How the game works
+* The game starts as soon as your browser loads
+* The game runs off a timer, so you cannot pause it
+* This concentration game rates you by moves made, and in turn it is how you will retain stars
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## Game Rules
+* Each move you flip 2 cards and try to find a match
+* Once you've matched 8 pairs together, You Win!
+* The game will pop up a modal displaying your stats and asking if you want to play again
+* A restart timer will be at the top to restart at any timer
 
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Build With
+* HTML
+* CSS 
+* JavaScript
